@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --drop-down-main-bg: RGB(35, 40, 45);
+    --drop-down-main-color: RGB(255, 255, 255);
+    --presentation-main-bg: RGB(0, 115, 170);
+    --active-submenu-bg: RGB(28, 32, 36);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: "Inter";
+    font-size: 1rem;
+    color: var(--drop-down-main-color);
+    min-width: 550px;
+}
+
+img {
+    width: 40px;
+    height: auto;
+}
+
+.icon {
+    padding-left: 20px;
+}
+
+.icon:hover {
+    cursor: pointer; 
+}
+
+.separator {
+    width: 100%;
+    height: 30px;
+    background: var(--active-submenu-bg);
+}
+
+.drop-down-menu {
+    display: flex;
+    background: var(--drop-down-main-bg);
+    align-items: center;
+    gap: 20px;
+}
+
+.drop-down-menu .main-menu {
+    display: flex;
+    align-items: center;
+}
+
+.main-menu > li {
+    position: relative;
+    padding: 20px;
+}
+
+.main-menu > li:hover .sub-menu {
+    display: flex; 
+}
+
+.main-menu > li:hover {
+    background: var(--active-submenu-bg); 
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.drop-down-menu .sub-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+    min-width: 100%;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    background: var(--active-submenu-bg);
+}
+
+.drop-down-menu .sub-menu li:hover {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+    
+}
+
+.presentation {
+    background: var(--presentation-main-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 0;
+}
+
+.presentation h1 {
+    font-weight: normal;
+}
+
+/* JS related */
+
+.active-submenu .sub-menu {
+    display: flex;
+}
+
+.active-submenu a {
+    color: #7b90ff;
+    font-weight: bold;
+}
